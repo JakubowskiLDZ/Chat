@@ -32,6 +32,7 @@ public class ClientTerminal implements Runnable {
 
                 ChatMessage messageToSent = new ChatMessage(username, message);
                 connection.writeObject(messageToSent);
+                connection.flush();
             }
 
         } catch (IOException e) {
